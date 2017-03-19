@@ -1,0 +1,33 @@
+<%= form_for(@shodan) do |f| %>
+  <% if @shodan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shodan.errors.count, "error") %> prohibited this shodan from being saved:</h2>
+
+      <ul>
+      <% @shodan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :bb_number %><br>
+    <%= f.number_field :bb_number %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

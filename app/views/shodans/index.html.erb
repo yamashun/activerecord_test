@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Shodans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bb number</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shodans.each do |shodan| %>
+      <tr>
+        <td><%= shodan.bb_number %></td>
+        <td><%= shodan.first_name %></td>
+        <td><%= shodan.last_name %></td>
+        <td><%= shodan.status %></td>
+        <td><%= link_to 'Show', shodan %></td>
+        <td><%= link_to 'Edit', edit_shodan_path(shodan) %></td>
+        <td><%= link_to 'Destroy', shodan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shodan', new_shodan_path %>

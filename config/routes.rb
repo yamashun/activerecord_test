@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :shodans
+  resources :tokens
+  resources :cars
+  get 'verify' => 'sms_user_registration#new'
+  post 'vefify' => 'sms_user_registration#vefify'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

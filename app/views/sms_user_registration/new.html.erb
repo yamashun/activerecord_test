@@ -1,0 +1,31 @@
+<h1>Verify car</h1>
+
+<%= form_for(@verify_form, url: 'verify') do |f| %>
+  <% if @verify_form.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@verify_form.errors.count, "error") %> prohibited this token from being saved:</h2>
+
+      <ul>
+      <% @verify_form.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :car_number %><br>
+    <%= f.text_field :car_number %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

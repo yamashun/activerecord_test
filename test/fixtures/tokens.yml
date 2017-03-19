@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  car_id: 
+  token: MyString
+  expiration_date: 2017-03-18 15:46:04
+  status: 
+
+two:
+  car_id: 
+  token: MyString
+  expiration_date: 2017-03-18 15:46:04
+  status: 

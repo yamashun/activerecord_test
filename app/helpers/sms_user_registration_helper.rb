@@ -1,0 +1,2 @@
+module SmsUserRegistrationHelper
+end
