@@ -1,9 +1,18 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
+
+  resources :notices
   resources :shodans
   resources :tokens
   resources :cars
   get 'verify' => 'sms_user_registration#new'
   post 'vefify' => 'sms_user_registration#vefify'
+  mount Sidekiq::Web, at: "/sidekiq"
+
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
